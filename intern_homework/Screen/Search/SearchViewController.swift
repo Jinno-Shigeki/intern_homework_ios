@@ -12,10 +12,11 @@ final class SearchViewController: UIViewController {
 
     @IBOutlet private weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    let activityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        activityIndicatorView.indicatorCustom(view: self.view)
     }
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
@@ -29,11 +30,13 @@ final class SearchViewController: UIViewController {
         }
         
         searchButton.isEnabled = false
+        activityIndicatorView.startAnimating()
         
         APIClient.fetchArticles(keyword: searchText) { [weak self] (result) in
             guard let self = self else { return }
             
             DispatchQueue.main.async {
+                self.activityIndicatorView.stopAnimating()
                 switch result {
                 case .success(let articles):
                     self.showArticleListScreen(articles)
