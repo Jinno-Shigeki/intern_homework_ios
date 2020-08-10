@@ -34,6 +34,7 @@
 		55B1568024E1257A00B20C8E /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1567E24E1257A00B20C8E /* ArticleListCell.swift */; };
 		55B1568124E1257A00B20C8E /* ArticleListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55B1567F24E1257A00B20C8E /* ArticleListCell.xib */; };
 		55B1568224E1399600B20C8E /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1567C24E124FF00B20C8E /* ArticleListViewController.swift */; };
+		55B1568424E1E38100B20C8E /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1568324E1E38100B20C8E /* IndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		55B1567C24E124FF00B20C8E /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		55B1567E24E1257A00B20C8E /* ArticleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
 		55B1567F24E1257A00B20C8E /* ArticleListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListCell.xib; sourceTree = "<group>"; };
+		55B1568324E1E38100B20C8E /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 			children = (
 				088E557924D669AF00A2FE3E /* Array+Extensions.swift */,
 				086F846424D997A00084571E /* UIAlertController+Extensions.swift */,
+				55B1568324E1E38100B20C8E /* IndicatorView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				082CF76524D5A5B9001F7680 /* SampleArticleListViewController.swift in Sources */,
 				55B1568224E1399600B20C8E /* ArticleListViewController.swift in Sources */,
 				55B1567624E11A0000B20C8E /* SearchViewController.swift in Sources */,
+				55B1568424E1E38100B20C8E /* IndicatorView.swift in Sources */,
 				088E557D24D7190300A2FE3E /* MainTabBarController.swift in Sources */,
 				08C5FE2624CD7A8B007100CA /* Article.swift in Sources */,
 				0841933924D950FF00BFCBD3 /* ErrorType.swift in Sources */,
