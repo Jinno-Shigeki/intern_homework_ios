@@ -19,7 +19,7 @@ struct Article: Codable {
     var url: String
     var user: User?
     var pageViewsCount: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case renderedBody = "rendered_body"
         case body
@@ -61,7 +61,7 @@ struct Article: Codable {
         var name: String
         var versions: [String]
     }
-
+    
     struct User: Codable {
         var description: String?
         var facebookId: String?
@@ -79,7 +79,7 @@ struct Article: Codable {
         var teamOnly: Bool
         var twitterScreenName: String?
         var websiteUrl: String?
-
+        
         enum CodingKeys: String, CodingKey {
             case description
             case facebookId = "facebook_id"
@@ -98,5 +98,26 @@ struct Article: Codable {
             case twitterScreenName = "twitter_screen_name"
             case websiteUrl = "website_url"
         }
+    }
+}
+
+extension Article {
+    var changedCreatedAt: String {
+        return changeDate(self.createdAt)
+    }
+    var changedUpdateAt: String {
+        return changeDate(self.updatedAt)
+    }
+    
+    func changeDate(_ createdAt: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXX"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        let date = formatter.date(from: createdAt)!
+        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
+        let str = formatter.string(from: date)
+        return str
     }
 }

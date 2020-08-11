@@ -36,9 +36,9 @@ extension ArticleListViewController: UITableViewDelegate {
         let safariViewController = SFSafariViewController(url: url)
         present(safariViewController, animated: true)
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 90
+//    }
 }
 //MARK: - UITableViewDataSource
 extension ArticleListViewController: UITableViewDataSource {
