@@ -17,6 +17,8 @@ final class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicatorView.indicatorCustom(view: self.view)
+        searchTextField.toolBarCustom(view: self.view)
+        searchTextField.delegate = self
     }
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
@@ -30,6 +32,7 @@ final class SearchViewController: UIViewController {
         }
         
         searchButton.isEnabled = false
+        searchTextField.endEditing(true)
         activityIndicatorView.startAnimating()
         
         APIClient.fetchArticles(keyword: searchText) { [weak self] (result) in
@@ -45,6 +48,7 @@ final class SearchViewController: UIViewController {
                     self.present(alert, animated: true)
                 }
                 self.searchButton.isEnabled = true
+                self.searchTextField.text = ""
             }
         }
     }
@@ -54,3 +58,10 @@ final class SearchViewController: UIViewController {
         navigationController?.pushViewController(nextViewController, animated: true)
     }
 }
+//MARK: - UITextFieldDelegate
+extension SearchViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+}
+
